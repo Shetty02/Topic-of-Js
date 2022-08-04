@@ -1,0 +1,16 @@
+.container {
+    margin-top: 30px;
+    
+}
+.registration-form {
+    width: 900px;
+    margin: auto;
+}
+.title{
+    text-align: center;
+    font-weight: 400;
+}
+
+.submit-btn{
+    text-align: center;
+}
