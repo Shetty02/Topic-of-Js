@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Object Methods</title>
+    <script>
+        // Standard Syntax
+        // function abc() {
+        //     console.log('abc');
+        // }
+        // abc()
+
+        // Anonymous Function : the function which doesn't have name .
+        // let abc = function () {
+        //     console.log('abc');
+        // }
+        // abc()
+        // Self-Invoking Function: A function which get  invoked at the time of declaration by itself./ didn't need to call.
+        // (function abc() {
+        //         console.log('abc'); 
+        // })()
+
+
+        // Object has two things 1) Property  2)Method 
+        // Properties of an Object - Those Keys which hold values other than functions Eg: firstName,LastName.
+        // Methods of Object - Those keys which hold function values Eg: sayHi
+
+        // Nehal.sayHi(); //for calling the function
+        // console.log(Nehal.lastName); //for calling key.
+        
+    //     let Nehal = {
+    //         firstName:'Nehal',
+    //         lastName : 'Shetty',
+    //         sayHi : function(name) {
+    //             console.log('Hi ' + name +' !');
+    //         },
+    //         addTwoNumbers: function(num1, num2) {
+    //             console.log(num1 + num2);
+    //         },
+    //         multiplyTwoNumbers: function(num1, num2) {
+    //             console.log(num1 * num2);
+    //         }
+
+    //     }
+    // Nehal.sayHi('Ajay')
+    // Nehal.sayHi('Nikhil')
+    // Nehal.addTwoNumbers(6,7)
+    // Nehal.multiplyTwoNumbers(6,7)
+ 
+    // Here we are trying to access the property of the same Object inside the method
+    // this Keyword :Refer to the Owner of that Method
+    // let Nehal = {
+    //     firstName : 'Nehal',
+    //     lastName : 'Shetty',
+    //     displayFullName : function () {
+    //         console.log(this.firstName + ' '+ this.lastName)
+    //     }
+    // }
+
+    // Nehal.displayFullName();
+
+    // Displaying the Introduction of a Person.
+    // let Nehal = {
+    //     firstName : 'Nehal',
+    //     lastName : 'Shetty',
+    //     hobbies : ['Swimming','Cycling','Reading'],
+    //     displayIntroduction : function () {
+    //          console.log( 'My name is ' + this.firstName + ' ' + this.lastName +'.'+'My hobbies are' + this.hobbies.join(', ') + '.' )
+    //     }
+    // }
+    // Nehal.displayIntroduction();
+       
+
+    let Nehal = {
+        firstName : 'Nehal',
+        lastName : 'Shetty'
+    }
+    let Nikhil = {
+        firstName :'Nikhil',
+        
+    }
+     
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

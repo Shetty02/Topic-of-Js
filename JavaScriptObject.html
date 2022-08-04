@@ -9,23 +9,50 @@
 <body>
     <h1 id="heading"></h1>
     <script>
-        const obj1 = {
-            a:10,
-            b:5,
-            c:20
-        }
+        // const obj1 = {
+        //     a:10,
+        //     b:5,
+        //     c:20
+        // }
         /* JSON Methods
         1) JSON.stringify() -->Converts object into String.
         2)JSON.parse()-->Converts String into Object.
-        */console.log(obj1);
+        */
+    //    console.log(obj1);
 
 
-        console.log(JSON.stringify(obj1));
+        // console.log(JSON.stringify(obj1));
 
-        console.log(JSON.parse('{"a":10,"b":5,"c":20}'))
+        // console.log(JSON.parse('{"a":10,"b":5,"c":20}'))
 
 
-        document.getElementById('heading').innerHTML =JSON.stringify(obj1);
+        // document.getElementById('heading').innerHTML =JSON.stringify(obj1);
+
+        // function Student () {
+        //     this.country = 'India',
+        //     this.capital = 'Delhi'
+        // }
+        // let a = new Student();
+        // console.log(a);
+        
+        // let b = new Student();
+        // console.log(b);
+
+        function Student(firstName,lastName) {
+            this.firstName = firstName,
+            this.lastName = lastName
+            this.displayFullName = function () {
+                console.log(this.firstName + ' ' + this.lastName)
+            }
+        }
+        let a = new Student('Nehal','Shetty')
+        a.displayFullName();
+        let b = new Student('Prashant','Gaud')
+        b.displayFullName();
+
+        // console.log(a);
+        // console.log(b);
+        
     </script>
 </body>
 </html>
