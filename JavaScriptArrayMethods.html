@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Array Methods</title>
+    <script>
+        /* 
+        1. forEach
+        Syntax : arr.forEaach(function(element){
+
+        })
+        */
+    //    let arr = [3,1,4,6,5]; 
+
+    //    for(element of arr){
+    //     console.log(element);
+    //    }
+    //    for(index in arr) {
+    //     console.log(index);
+    //    }
+
+    //    arr.forEach(function(element){
+    //     console.log(element)
+    //    })
+
+
+     /* 
+        2. filter
+        Syntax : arr.filter(function(element){
+            return [condition]
+        })
+        */
+
+        // let arr = [3, 1, 5, 2, 6]
+
+        // let filteredArray = arr.filter(function(element){
+        //     return element%2 != 0;
+        // })
+
+        // console.log(filteredArray);
+
+
+           /* 
+        2. map
+        Syntax : arr.forMap(function(element){
+            return [update Element]
+        })
+        */
+
+        let arr = [3, 1, 5, 2, 6]
+
+        // let updateArray = arr.map(function(element){
+
+        //     return element + 5;
+        // }) 
+//         let updateArray = arr.map(function(element){
+
+// return element +'5';
+// }) 
+// let updateArray = arr.map(function(element){
+
+// return element % 5;
+// }) 
+   let updateArray = arr.map(function(element){
+    if(element % 2===0) {
+
+    return element + 5;
+     }
+      }) 
+
+        console.log(updateArray);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

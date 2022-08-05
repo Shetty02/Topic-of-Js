@@ -23,7 +23,15 @@ function validate() {
         document.getElementById('last-name-invaild').style.display = 'block'
         document.getElementById('last-name-vaild').style.display = 'none'
     }
-    if(EmailInput.length >= 1) {
+
+    /*
+    Conditions for Email
+    1)Wheter Exist--Done
+    2) @
+    3) .
+    4)After . last there should be atleaast 2 char
+    5) First char cann't be @ */
+    if(EmailInput && EmailInput.includes('@') && EmailInput.includes('.') && EmailInput.lastIndexOf('.') <= EmailInput.length - 3 && EmailInput.indexOf('@')!==0) {
         document.getElementById('Email-vaild').style.display = 'block'
         document.getElementById('Email-invaild').style.display = 'none'
     }
