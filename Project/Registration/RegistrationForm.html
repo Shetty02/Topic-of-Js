@@ -285,7 +285,7 @@
             <div class="col-md-3">
                 <label for="State" class="form-label">State</label>
                 <select class="form-select" id="State">
-                             <option value="">Select State</option>
+                             <option value="None" selected>Select State...</option>
                             <option value="Andhra Pradesh">Andhra Pradesh</option>
                             <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
                             <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -323,10 +323,10 @@
                             <option value="Uttarakhand">Uttarakhand</option>
                             <option value="West Bengal">West Bengal</option>
                 </select>
-                <div class="valid-feedback">
+                <div class="valid-feedback" id="state-valid">
                     Looks good!
                 </div>
-                <div class="invalid-feedback">
+                <div class="invalid-feedback" id="state-invalid">
                     Please select a valid state.
                 </div>
             </div>
@@ -346,7 +346,7 @@
                     <label class="form-check-label" for="tnC">
                         Agree to terms and conditions
                     </label>
-                    <div class="invalid-feedback">
+                    <div class="invalid-feedback" id="tnC-invalid">
                         You must agree before submitting.
                     </div>
                 </div>

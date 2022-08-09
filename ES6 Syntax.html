@@ -7,9 +7,78 @@
     <title>Document</title>
 </head>
 <body>
-    function (a=0,b=0, c=0) {
-        console.log()
-    }
+    <script>
+        // 1)Template String
+    // const Nehal = {
+    //     firstName:'Nehal',
+    //     lastName:'Shetty'
+    // }
 
-</body>
+    // console.log('Hi' + " "+ Nehal.firstName +" "+ Nehal.lastName + '!');
+
+    // // using Template String--update In ES6
+    // console.log(`Hi ${Nehal.firstName} ${Nehal.lastName} !`)
+
+
+    // 2)let & Const : both are also add in ES6
+  
+    // var --> NoScope
+    // let -> Scope
+    //const --> Scope + const Value
+
+  //1)  problem with var
+    //  var x = 5;
+    //  {
+    //     var x =10;
+    //  }
+    //  console.log(x)  ;// o/p will be 10
+
+    // 2) let
+    // let x = 5;
+    // {
+    //     let x = 10;
+    // }
+    // console.log(x); // o/p:5  because let is inside the block so it cann't be access outsied the block scope;
+    // let x = 5;
+    // {
+    //      x = 10;
+    // }
+    // console.log(x); // o/p:10 here we are changing the value of the let's variable x ,we are not reinitializing the value of let ;
+    // let & const variable don't get hoisted in general.but it can get hoisted in case of Temporal Dead Zone.(TDZ) After delcare we can access let & const.
+
+    // 3)Arrow Function
+    //  const abc = () => console.log('abc');
+    //  abc();
+
+    // const sum = (a,b) => a+b;
+    // console.log(sum(5,4)); 
+
+    //  4) Default Parameter
+    // function abc(a,b,c) {
+    //     console.log(a+b+c);
+    // }
+    // abc(3,4,5);
+    // abc(3,5);// this will give me NaN i.e not a nunber ,because a=3 , b=5, c=undefined(for 'C' we are not passing any value) ,that's where comes the Default Parameter ,so in that we have to give default values to the parameters inside the function Ex:(a=0,b=0,c=0).
+    
+    // function abc(a =0,b=0,c=0) {
+    //     console.log(a+b+c);
+    // }
+    // abc(5,4);
+
+
+    // 5)Exponential operator
+    // console.log(Math.pow(2,3)); // In-built function in js
+    // console.log(2**3) // add in ES6  Version  **(works as a power)
+
+    // 6) Include() method used in Arrays & String :to check wheter String , char or  value is present or not .It gives Boolean value.
+
+    
+     
+
+
+
+
+    </script>
+
+</body> 
 </html>
