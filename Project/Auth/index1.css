@@ -1,3 +1,6 @@
+.jumbotron{
+    text-align: center;
+}
 .registration-form, .Login-form {
     width: 800px;
     margin: 10px  auto;
@@ -5,10 +8,13 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 20px;
     padding: 10px 10px 30px;
+    /* margin-top: 50px; */
 }
 .Login-form {
     margin-top: 100px;
+    padding: 10px 30px 30px;
 }
 .sign-up-tittle, .login-title, .button-wrapper{
     text-align: center;
+    /* margin-top: 100px; */
 }
