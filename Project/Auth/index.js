@@ -20,7 +20,30 @@ let encryptionRule = {
     '!': '#', '$': '%', '&': '+', '-': '@',
     '': '~', '#': '!', '%': '$', '+': '&',
     '@': '-', '~': ''
-  }
+}
+
+// Testing Encryption
+const encrypt = (inputString) => {
+    let encrytedString = ''
+    for(char of inputString) {
+        encrytedString = encrytedString + encryptionRule[char]
+    }
+    return encrytedString
+}
+
+const decrypt = (encrytedString) => {
+	let ActualPassword = ''
+    let keys = Object.keys(encryptionRule);
+    let values = Object.values(encryptionRule)
+	for(char of encrytedString) {
+        let requiredIndex = values.findIndex(value => value === char)
+		ActualPassword = ActualPassword + keys[requiredIndex];
+	}
+	return ActualPassword
+}
+// console.log(encrypt('Shetty'))
+// console.log(decrypt(encrypt('Shetty')))
+
 const DB_USERS = []
 
 // We are Creating a ResetFunction for resting the details empty are clicking on submit Button.
@@ -58,7 +81,7 @@ const signup = () => {
         firstName,
         lastName,
         email,
-        password,
+        password : encrypt(password),
         phone
     }
     // DB_user  is Storing the Database inside the Array, whenever the user is login.
@@ -78,7 +101,7 @@ const Login = () => {
 
     // function of Find() method 
 // Always return a condition to find the element, If value exists ,returns the value, else returns the undefined 
-    let currentUser = DB_USERS.find(user => user.email === enteredEmail && user.password === enteredPassword)
+    let currentUser = DB_USERS.find(user => user.email === enteredEmail && decrypt(user.password) === enteredPassword)
     
 
     if(currentUser) {
@@ -92,8 +115,6 @@ const Login = () => {
     // console.log(currentPassword) ;
     resetLoginFields();
 }
-
-
 /*
 2  Steps
 1) Check Whether the email (user) exits in DB
