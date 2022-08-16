@@ -65,9 +65,75 @@
 			- batch
 			- average marks secured
 		*/
-        let ans = students.filter(students => (students.science + students.social));
-        console.log(ans)
-    </script>
+        let studentDetails = students.map((students) =>{
+            let markArray = Object.values(students.marks)
+            let totalMark = 0 
+            markArray.forEach(marks => {
+                totalMark = totalMark + marks
+            })
+
+            
+            let avgmarks = totalMark/markArray.length
+                        return {
+                name:students.name,
+                batch:students.batch,
+                avgmarks:avgmarks
+            }
+        })
+        console.log(studentDetails)
+      
+		/* Q - Return array of only those students whose avg marks should be > 75 with following details:
+			- name
+			- batch
+			- average marks secured
+      */  
+    //  Here we have used .map() --> .filter() 
+           let studentDetails1 = students.map((students) =>{
+            let markArray = Object.values(students.marks)
+            let totalMark = 0 
+            markArray.forEach(marks => {
+                totalMark = totalMark + marks
+            })
+            let avgmarks = totalMark/markArray.length
+                        return {
+                name:students.name,
+                batch:students.batch,
+                avgmarks:avgmarks
+            }
+
+        }).filter(function(student){
+          return student.avgmarks > 75
+        })
+        console.log(studentDetails1)
+        
+
+
+    //  Here we have used   .filter() --> .map() 
+        let studentDetails2 = students.filter((students) =>{
+            let markArray1 = Object.values(students.marks)
+            let totalMark1 = 0 
+            markArray1.forEach(marks => {
+                totalMark1 = totalMark1 + marks
+            })            
+            let avgmarks = totalMark1/markArray1.length
+            return  avgmarks > 75
+
+        }).map(function(student) {
+          let markArray = Object.values(student.marks)
+            let totalMark = 0 
+            markArray.forEach(marks => {
+                totalMark = totalMark + marks
+            })           
+            let avgmarks = totalMark/markArray.length
+          return {
+            name:student.name,
+            batch:student.batch,
+            avgmarks:avgmarks
+          }
+        })
+   
+         console.log(studentDetails2)
+        </script>
 </head>
 <body>
     

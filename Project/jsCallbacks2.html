@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // o/p should be 1 2 3 but we get 2 3 1 ,because here code is running Asynchronously in this case 2 will get print fist because of it will take only 3secs 
+        // Note:here whole Asynchronous code get Executed in 5 sec only
+        // setTimeout(function(){
+        //     console.log(1)
+        // },5000)
+
+        
+        // setTimeout(function(){
+        //     console.log(2)
+        // },3000)
+
+        
+        // setTimeout(function(){
+        //     console.log(3)
+        // },4000)
+
+        // if we have to print  1 2 3the we have to write the code inside of another
+        // Note:here whole Asynchronous code get Executed in total 12 sec only
+        // setTimeout(function (){
+        //     console.log(1)
+
+        //     setTimeout(function() {
+        //         console.log(2)
+
+        //         setTimeout(function() {
+        //         console.log(3)
+        //     },4000)
+        //     },3000)
+
+            
+           
+
+        // },5000)
+
+        /*
+			Order placed 
+			After 2s -> Chef received the order and started preparing
+			After 10s -> Pizza Sauce added
+			After 5s -> First layer of cheeze added
+			After 12s -> Toppings added
+			After 5s -> Second layer of cheeze added
+			After 15s -> Pizza baked!
+			After 8s -> Oregano added and packed
+			After 2s -> Package received at counter
+			The order is ready and handed over to the Zomato delivery guy!
+		*/
+        // My version
+        // console.log('Order Placed')
+        //     setTimeout(() => {
+        //         console.log('Chef received the order and started preparing')
+
+        //         setTimeout(() => {
+        //             console.log('Pizza Sauce added')
+
+        //             setTimeout(() => {
+        //                 console.log('First layer of cheeze added')
+
+        //                 setTimeout(() => {
+        //                     console.log('Toppings addedd')
+
+        //                     setTimeout(() => {
+        //                         console.log('Second layer of cheeze added')
+
+        //                         setTimeout(() => {
+        //                             console.log('Pizza baked!')
+
+        //                             setTimeout(() => {
+        //                                 console.log('Oregano added and packed')
+
+
+        //                                 setTimeout(() => {
+        //                                     console.log('Package received at counter')
+
+
+        //                                     console.log('The order is ready and handed over to the Zomato delivery guy!')
+        //                                 }, 2000)
+
+        //                             }, 8000)
+
+
+        //                         }, 15000)
+        //                     }, 5000)
+
+        //                 }, 12000)
+
+        //             }, 5000)
+
+        //         }, 10000)
+        //     }, 2000);
+
+
+        // callback Hell - When callback calling callback repeatedly, it forms a structure like below.
+        console.log('Order Placed')
+        function executeCode(callback) {
+                setTimeout(() => {
+                    console.log('Chef received the order and started preparing')
+                    setTimeout(() => {
+                        console.log('Pizza Sauce added')
+                        setTimeout(() => {
+                            console.log('First layer of cheeze added')
+                            setTimeout(() => {
+                                console.log('Toppings addedd')
+                                setTimeout(() => {
+                                    console.log('Second layer of cheeze added')
+                                    setTimeout(() => {
+                                        console.log('Pizza baked!')
+                                        setTimeout(() => {
+                                            console.log('Oregano added and packed')
+                                            setTimeout(() => {
+                                                console.log('Package received at counter')
+                                                callback();
+                                                // console.log('The order is ready and handed over to the Zomato delivery guy!')
+                                            }, 2000)
+                                        }, 8000)
+                                    }, 15000)
+                                }, 5000)
+                            }, 12000)
+                        }, 5000)
+                    }, 10000)
+                }, 2000);
+            }
+        executeCode(function(){
+            console.log('The order is ready and handed over to the Zomato delivery guy!')
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
