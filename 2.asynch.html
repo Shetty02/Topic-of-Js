@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script>
+        // function displayTime() {
+        //     const dt = new Date();
+            // document.getElementById('root').innerHTML = dt.getDate()
+            // document.getElementById("root").innerHTML = dt.getHours() +':' + dt.getMinutes() + ':' + dt.getSeconds();
+
+            // Why we are convetinrg the hours into a string because padStart & padEnd works on a string and hours is typeOf Number so that's why we have to convert the string into number.
+        //     const hh = dt.getHours().toString().padStart(2,'0');
+        //     const min = dt.getMinutes().toString().padStart(2,'0');
+        //     const sec = dt.getSeconds().toString().padStart(2,'0');
+
+        //     document.getElementById('root').innerHTML = `${hh}:${min}:${sec}`
+
+        // }
+        // displayTime()
+        // setInterval(displayTime,1000)
+          
+        // Learn about padStart and padEnd
+        // let str = "Nehal"
+        
+        // // let output = str.padStart(8,'a')
+        // // let output = str.padEnd(8,'a')
+        
+        // console.log(output)
+
+        // We created a clock using set interval
+
+
+
+        // can we create a clock using set timeout , if yes then how?
+        // we will call setTimeout() inside the function its like a reccurrsion .
+        // Milliseconds will run better in case of recurssion call/setTimeout() then set Interval ().
+        // function displayTime() {
+        //     const dt = new Date();
+
+        //     const hh =dt.getHours().toString().padStart(2,'0');
+        //     const min = dt.getMinutes().toString().padStart(2,'0');
+        //     const sec = dt.getSeconds().toString().padStart(2,'0');
+        //     const msec = dt.getMilliseconds().toString().padStart(3,'0');
+
+        //     document.getElementById("root").innerHTML = `${hh}:${min}:${sec}:${msec}`
+        //     setTimeout(displayTime,1000)
+        // }
+        
+        // displayTime()
+    </script>
+</body>
+</html>

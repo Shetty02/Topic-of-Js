@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        const getUser = (userId) =>{
+            // get a user using the user Id
+            return new Promise((resolve,reject)=>{
+                console.log("Get the User from the Database")
+
+                setTimeout(()=>{
+                    resolve({
+                        id:userId,
+                        username:'Nehal'
+                    })
+                },2000)
+            })
+
+        }
+        const getServices = (user) =>{
+            // return some services
+            return new Promise((resolve,reject)=>{
+                console.log(`Get the services of ${user.username} from the API`)
+                
+                setTimeout(()=>{
+                    resolve(['Email','VPN','CDN'])
+                },3000)
+            })
+        }
+        const servicesCost = (services) =>{
+            // return the cost of tthe Services
+            return new Promise((resolve,reject)=>{
+                console.log(`Calculate the total services cost of ${services.join(',')}`)
+
+                setTimeout(()=>{
+                    resolve(services.length*100)
+                },4000)
+            })
+        }
+        // getUser(100)
+        //     .then(userData=>console.log(userData))
+
+         // Above can also be written in this form
+        // getUser(100)
+        // .then(console.log)
+
+        // Now here we are get the services of the user 
+        // getUser(100)
+        // .then(getServices)
+        // .then(console.log)
+
+        // Here we are getting the Service cost of the user
+        // getUser(100)
+        // .then(getServices)
+        // .then(servicesCost)
+        // .then(console.log)
+
+
+    </script>
+</body>
+</html>
