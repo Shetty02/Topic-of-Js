@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Promises</title>
+</head>
+<body>
+    <script>
+        
+        // By Ankit Sir
+
+        // We are creating a Object and then returning the ans
+        // let promise = new Promise((resolve, reject) => {
+        //         // resolve("Hey, I Passed!")
+        //         reject("Hey, I didn't Passed!")
+        //     })
+
+            // promise.then((resolvedmsg) => {
+            //     console.log("Promise passed Successfuly !" + resolvedmsg)
+            // }).catch((rejectmsg) => {
+            //     console.log("Promise passed unSuccessfuly!" + rejectmsg)
+            // })
+
+
+
+// Handling rejection is also possible using second callback of .then method
+//    ex: 
+    //    promise.then((resolvemsg)=>{
+    //     console.log("Promise was Resolved with the message:" + resolvemsg)
+    //    }, (rejectmsg) =>{
+    //     console.log("Promise was Reject with the message:" + rejectmsg)
+    //    })
+
+
+    // returning the Promise using functions
+    // const promise1 = () =>{
+    //     return new Promise((resovlve,reject)=>{
+    //         resovlve("Hey, I am Resolved")
+    //     })
+    // }
+    // promise1().then((resolvemsg)=>{
+    //     console.log("Promise was Resovled with the msg:" + resolvemsg)
+    // }).catch((rejectmsg)=>{
+    //     console.log("Promise was Rejected with the msg:" + rejectmsg)
+    // })
+
+    const promise2 = () => {
+        return new Promise((resolve,reject)=>{
+            setTimeout(()=> {
+                resolve("A + ")
+            },2000)
+        })
+    }
+
+    promise2().then((resolvemsg) => {
+        // console.log(resolvemsg)
+        return resolvemsg + 'B + '
+    }).then((resolvemsg) => {
+        return resolvemsg + 'C '
+    }).then((resolvemsg) => {
+        console.log(resolvemsg)
+    }).catch((rejectmsg) => {
+        console.log('Promise was rejected with the message:' + rejectmsg)
+    })
+    </script>
+    
+</body>
+</html>

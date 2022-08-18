@@ -98,41 +98,129 @@
 
 
         // callback Hell - When callback calling callback repeatedly, it forms a structure like below.
-        console.log('Order Placed')
-        function executeCode(callback) {
+        // console.log('Order Placed')
+        // function executeCode(callback) {
+        //         setTimeout(() => {
+        //             console.log('Chef received the order and started preparing')
+        //             setTimeout(() => {
+        //                 console.log('Pizza Sauce added')
+        //                 setTimeout(() => {
+        //                     console.log('First layer of cheeze added')
+        //                     setTimeout(() => {
+        //                         console.log('Toppings addedd')
+        //                         setTimeout(() => {
+        //                             console.log('Second layer of cheeze added')
+        //                             setTimeout(() => {
+        //                                 console.log('Pizza baked!')
+        //                                 setTimeout(() => {
+        //                                     console.log('Oregano added and packed')
+        //                                     setTimeout(() => {
+        //                                         console.log('Package received at counter')
+        //                                         callback();
+        //                                         // console.log('The order is ready and handed over to the Zomato delivery guy!')
+        //                                     }, 2000)
+        //                                 }, 8000)
+        //                             }, 15000)
+        //                         }, 5000)
+        //                     }, 12000)
+        //                 }, 5000)
+        //             }, 10000)
+        //         }, 2000);
+        //     }
+        // executeCode(function(){
+        //     console.log('The order is ready and handed over to the Zomato delivery guy!')
+        // })
+
+
+ 
+        // This is done by Promise Chaining 
+ const ChefReceived = () =>{
+            return new Promise((resolve,reject)=>{
                 setTimeout(() => {
                     console.log('Chef received the order and started preparing')
-                    setTimeout(() => {
-                        console.log('Pizza Sauce added')
-                        setTimeout(() => {
-                            console.log('First layer of cheeze added')
-                            setTimeout(() => {
-                                console.log('Toppings addedd')
-                                setTimeout(() => {
-                                    console.log('Second layer of cheeze added')
-                                    setTimeout(() => {
-                                        console.log('Pizza baked!')
-                                        setTimeout(() => {
-                                            console.log('Oregano added and packed')
-                                            setTimeout(() => {
-                                                console.log('Package received at counter')
-                                                callback();
-                                                // console.log('The order is ready and handed over to the Zomato delivery guy!')
-                                            }, 2000)
-                                        }, 8000)
-                                    }, 15000)
-                                }, 5000)
-                            }, 12000)
-                        }, 5000)
-                    }, 10000)
+                    resolve()
                 }, 2000);
-            }
-        executeCode(function(){
-            console.log('The order is ready and handed over to the Zomato delivery guy!')
+            })
+        }
+        const PizzaSauceAdded = () =>{
+            return new Promise((resolve, reject)=>{
+                setTimeout(() => {
+                    console.log('Pizza Sauce added')
+                    resolve()
+                }, 10000)
+            })
+        }
+        const FirstLayerOfCheezeAdded = () =>{
+            return new Promise((resolve, reject)=>{
+                setTimeout(() => {
+                    console.log('First layer of cheeze added')
+                    resolve()
+                }, 5000)
+            })
+        }
+        const ToppingsAddedd = () =>{
+            return new Promise((resolve, reject)=>{
+                setTimeout(() => {
+                    console.log('Toppings addedd')
+                    resolve()
+                }, 12000)
+            })
+        }
+
+    const SecondLayerOfCheezeAdded = () => {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                console.log('Second layer of cheeze added')
+                resolve()
+            }, 5000)
         })
+    }
+    const pizzaBaked = () => {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                console.log('Pizza baked!')
+                resolve()
+            }, 15000)
+        })
+    }
+    const OreganoAddedAndPacked = () => {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                console.log('Oregano added and packed')
+                resolve()
+            }, 8000)
+        })
+    }
+    
+    const PackageReceivedAtCounter = () => {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                console.log('Package received at counter')
+                resolve()
+            }, 2000)
+        })
+ }
+ const  executeOrder= () => {
+    console.log('Order placed')
+    ChefReceived()
+    .then(PizzaSauceAdded)
+    .then(FirstLayerOfCheezeAdded)
+    .then(ToppingsAddedd)
+    .then(SecondLayerOfCheezeAdded)
+    .then(pizzaBaked)
+    .then(OreganoAddedAndPacked)
+    .then(PackageReceivedAtCounter)
+    .then(()=>console.log('The order is ready and handed over to the Zomato delivery guy!'))
+    .catch((errr)=>console.log(err))
+ }
     </script>
 </head>
 <body>
-    
+    <button onclick="executeOrder()">Execute Order</button>
+
+
+       <!-- <button onclick="executeOrder(function(){
+        console.log('The order is ready and handed over to the Zomato delivery guy!')
+    })">Execute Order</button> -->
 </body>
-</html>
+</html> 
