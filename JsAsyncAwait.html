@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let promise = new Promise((resolve,reject)=>{
+        //     setTimeout(() => {
+        //         resolve('Promise 1 resolved!')
+        //         // reject('Promise 1 rejected!')
+        //     }, 4000)
+        // })
+
+        // promise.then((resolvedmsg) => {
+        //     console.log('[RESOLVED]' + resolvedmsg)
+        // }).catch((rejectedmsg) => {
+        //     console.log('[REJECT]' + rejectedmsg)
+        // })
+
+        /*--------------------------------------------------------------*/
+        // how to write async in function ?
+        // 1) async function abc() {} //Async basic function
+        // 2)  const abc = async function () {} // Async Anonymous function
+        // 3) const abc = async () => {}   // Async Arrow function
+        /*--------------------------------------------------------------*/
+        
+        //  EQUIVALENT REPRESENTATION HANDLING PROMISES USING ASYNC-AWAIT
+        // const handlePromise = async function() {
+        //     try{
+        //         const resolvedmsg = await promise
+        //         console.log('[RESOLVED]' + resolvedmsg)
+        //     } catch(rejectedmsg){
+        //         console.log('[REJECT]' + rejectedmsg)
+        //     }
+        // } 
+        // handlePromise();
+
+        // let promise1 = new Promise((resolve,reject)=>{
+        //     setTimeout(() => {
+        //         resolve('Promise 1 resolved!')
+        //         // reject('Promise 1 rejected!')
+        //     }, 4000)
+        // })
+        // let promise2 = new Promise((resolve,reject)=>{
+        //     setTimeout(() => {
+        //         resolve('Promise 2 resolved!')
+        //         // reject('Promise 1 rejected!')
+        //     }, 8000)
+        // })
+        // const handlePromise = async function() {
+        //     try{
+        //         const resolvedmsg1 = await promise1
+        //         console.log('[RESOLVED Promise 1]' + resolvedmsg1)
+        //         const resolvedmsg2 = await promise2
+        //         console.log('[RESOLVED Promise 2]' + resolvedmsg2)
+        //     } catch(rejectedmsg){
+        //         console.log('[REJECT]' + rejectedmsg)
+        //     }
+        // } 
+        // handlePromise();
+
+
+
+        let fetchDataFromServer =() => new Promise((resolve,reject)=>{
+            setTimeout(() => {
+                resolve('[200] Fetched data Successfully!')
+            }, 4000)
+        })
+        let processData = () => new Promise((resolve,reject)=>{
+            setTimeout(() => {
+                resolve('Processed data Successfully!')
+            }, 8000)
+        })
+        const fetchAndProcesData = async function() {
+            try{
+                console.log('Fetching data now ...')
+                const data = await  fetchDataFromServer()
+                console.log(data)
+                console.log('Processing data now ...')
+                const processingData = await processData()
+                console.log(processingData)
+            } catch(err){
+                console.log(err)
+            }
+        } 
+         fetchAndProcesData()
+
+         
+
+
+    </script>
+</body>
+</html>
