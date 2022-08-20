@@ -26,19 +26,11 @@
 .order-status-card .card-text {
 	margin-bottom: 0.5rem;
 }
+.card-text, p{
+  margin-bottom: 0.5rem;
+}
 
 .order-status-card .rounded-pill {
-	font-size: 1em;
+	font-size: .85em;
+  margin: auto;
 }
-
-
-/* .card-header{
-    background-color: green;
-}
-.card-body{
-    background-color: yellow;
-}
-.card-footer{
-    background-color: blue;
-    /* color: white; */
-/* }  */

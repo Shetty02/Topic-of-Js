@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Async Await2</title>
+    <script>
+        // Here We are doing Pizza Order Using Async Await       
+ const ChefReceived = () =>{
+            return new Promise((resolve,reject)=>{
+                setTimeout(() => {
+                    console.log('Chef received the order and started preparing')
+                    resolve()
+                }, 2000);
+            })
+        }
+        const PizzaSauceAdded = () =>{
+            return new Promise((resolve, reject)=>{
+                setTimeout(() => {
+                    console.log('Pizza Sauce added')
+                    resolve()
+                }, 10000)
+            })
+        }
+        const FirstLayerOfCheezeAdded = () =>{
+            return new Promise((resolve, reject)=>{
+                setTimeout(() => {
+                    console.log('First layer of cheeze added')
+                    resolve()
+                }, 5000)
+            })
+        }
+        const ToppingsAddedd = () =>{
+            return new Promise((resolve, reject)=>{
+                setTimeout(() => {
+                    console.log('Toppings addedd')
+                    resolve()
+                }, 12000)
+            })
+        }
+
+    const SecondLayerOfCheezeAdded = () => {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                console.log('Second layer of cheeze added')
+                resolve()
+            }, 5000)
+        })
+    }
+    const pizzaBaked = () => {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                console.log('Pizza baked!')
+                resolve()
+            }, 15000)
+        })
+    }
+    const OreganoAddedAndPacked = () => {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                console.log('Oregano added and packed')
+                resolve()
+            }, 8000)
+        })
+    }    
+    const PackageReceivedAtCounter = () => {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                console.log('Package received at counter')
+                resolve()
+            }, 2000)
+        })
+ }
+ 
+ const  executeOrder= async () => {
+    console.log('Order placed')
+    try{
+       await ChefReceived()
+        await PizzaSauceAdded()
+        await FirstLayerOfCheezeAdded()
+        await ToppingsAddedd()
+        await SecondLayerOfCheezeAdded()
+        await pizzaBaked()
+        await OreganoAddedAndPacked()
+        await PackageReceivedAtCounter()
+    console.log('The order is ready and handed over to the Zomato delivery guy!')
+    }
+    catch(errr){
+        console.log(err)
+     }
+    }
+    </script>
+</head>
+<body>
+    <button onclick="executeOrder()">Execute Order</button>
+</body>
+</html> 
