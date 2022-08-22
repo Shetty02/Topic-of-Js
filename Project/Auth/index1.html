@@ -71,16 +71,22 @@
                     <div class="col-md-6">
                         <label for="signup-first-name" class="form-label">First name</label>
                         <input type="text" class="form-control" id="signup-first-name" required autocomplete="off">
-                        <div class="valid-feedback">
-                            Looks good!
+                        <div class="valid-feedback" id="first-name-vaild">
+                          Entered correct Details!
                         </div>
+                        <div class="invalid-feedback" id="first-name-invaild">
+                            Please provide a valid firstname.
+                          </div>
                     </div>
                     <!----------------- Last Name--------------->
                     <div class="col-md-6">
                         <label for="signup-last-name" class="form-label">Last name</label>
                         <input type="text" class="form-control" id="signup-last-name" required autocomplete="off">
-                        <div class="valid-feedback">
-                            Looks good!
+                        <div class="valid-feedback" id="last-name-vaild">
+                          Entered correct Details!
+                        </div>
+                        <div class="invalid-feedback" id="last-name-invaild">
+                            Please provide a valid lastname.
                         </div>
                     </div>
                     <!----------------- Email Id--------------->
@@ -92,7 +98,10 @@
                               </div> 
                             <input type="text" class="form-control" id="signup-email"
                                 aria-describedby="inputGroupPrepend" required autocomplete="off">
-                            <div class="invalid-feedback">
+                                <div class="valid-feedback" id="signup-email-valid">
+                                    Entered correct Details!
+                                </div>   
+                            <div class="invalid-feedback" id="signup-email-invalid">
                                 Please enter a Vaild Email.
                             </div>
                         </div>
@@ -106,7 +115,10 @@
                             </div>
                             <input type="text" class="form-control" id="signup-phone"
                                 aria-describedby="inputGroupPrepend" required autocomplete="off">
-                            <div class="invalid-feedback">
+                                <div class="valid-feedback" id="signup-phone-valid">
+                                    Entered correct Details!
+                                </div>
+                            <div class="invalid-feedback" id="signup-phone-invalid">
                                 Please enter a Vaild Phone Number.
                             </div>
                         </div>
@@ -115,7 +127,10 @@
                     <div class="col-md-6">
                         <label for="signup-password" class="form-label">Password</label>
                         <input type="password" class="form-control" id="signup-password" required autocomplete="off">
-                        <div class="invalid-feedback">
+                        <div class="valid-feedback" id="signup-password-valid">
+                            Entered correct Details!
+                        </div>
+                        <div class="invalid-feedback" id="signup-password-invalid">
                             Please provide a valid password.
                         </div>
                     </div>
@@ -123,8 +138,11 @@
                     <div class="col-md-6">
                         <label for="signup-confirm-password" class="form-label">Confirm Password</label>
                         <input type="password" class="form-control" id="signup-confirm-password" required autocomplete="off">
-                        <div class="invalid-feedback">
-                            Password and Confirm password do not Match.
+                        <div class="valid-feedback" id="signup-confirm-password-valid">
+                            Entered correct Details!
+                        </div>
+                        <div class="invalid-feedback" id="signup-confirm-password-invalid">
+                            Please provide a valid password.
                         </div>
                     </div>
                     <!----------------- Agreements --------------->
@@ -134,7 +152,7 @@
                             <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
                                 Agree to terms and conditions
                             </label>
-                            <div class="invalid-feedback">
+                           <div class="invalid-feedback" id="check-box-invalid">
                                 You must agree before submitting.
                             </div>
                         </div>
@@ -164,12 +182,18 @@
                     <div class="mb-3">
                         <label for="login-email" class="form-label">Email address</label>
                         <input type="email" class="form-control" id="login-email" aria-describedby="emailHelp">
-                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                        <div class="invalid-feedback" id="login-email-invalid">
+                            Please provide a valid email-id.
+                        </div>
                     </div>
                     <!----------------- Password --------------->
                     <div class="mb-3">
                         <label for="login-password" class="form-label">Password</label>
                         <input type="password" class="form-control" id="login-password">
+                        <div class="invalid-feedback" id="login-password-invalid">
+                            Please provide a valid password.
+                        </div>
                     </div>
                     <!----------------- Log In Button --------------->
                     <div class="col-12 button-wrapper">

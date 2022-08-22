@@ -1,10 +1,4 @@
-const exectueOrder = () =>{
-    // console.log('Exectue!')
-    let orderId = document.getElementById('order-id-input').value 
-    //After getting the orderId we need to empty the "Enter OrderId serach bar" so we use the belowone 
-    document.getElementById('order-id-input').value = ''
-    // console.log(orderId) //Checking the orderId Exectution is correct or not 
-
+const createOrderCard = (orderId) => {
     let orderCardsWrapper = document.getElementById('order-cards-wrapper')
     // Create Element 
     // 1) creating a div tag ,we use a new method name createElement
@@ -37,12 +31,27 @@ const exectueOrder = () =>{
     cardText1.innerText = 'Medium Size Pizza - 2 Nos'
     cardText2.innerHTML = 'Bill Amount: <b>$22</b>'
     statusBadge.innerText = 'First Layer of Cheese added'
-    cardFooter.innerText = '18-08-2022 10:25 PM'
+    const d = new Date()
+    
+    // cardFooter.innerText = d
+    cardFooter.innerText = new Date().toLocaleDateString("en-US",{ 
+        // weekday: 'long',
+         year: 'numeric', 
+         month: 'long', 
+         day: 'numeric',
+        hour:'2-digit',
+      minute:"2-digit",
+    second:'2-digit' })
+    // 22-08-2022 02:32 PM
+    
 
     // colDiv.innerText = 'XYZ'
     //   <div>XYZ</div> this is created above 
     // So here the parent Element is  "order-cards-wrapper" & the child element is "order-status-card" of which I have created the element colDiv , so here we have to link the child element to the parent element ,so how we are gona do that ? By using .appendchild method Ex:
     // orderCardsWrapper.appendChild(colDiv)
+
+    
+    statusBadge.id = orderId
 
 
     cardDiv.appendChild(cardheader)
@@ -54,25 +63,22 @@ const exectueOrder = () =>{
     cardDiv.appendChild(cardFooter)
     colDiv.appendChild(cardDiv)
     orderCardsWrapper.appendChild(colDiv)
-
-
-
 }
 
-{/* <div class="col-md-3 order-status-card">
-<div class="card text-center">
-    <div class="card-header">
-        Order ID: <b>MP20220001</b>
-    </div>
-    <div class="card-body">
-        <p class="card-text">Medium Size Pizza - 2 Nos</p>
-        <p class="card-text">Bill Amount: <b>$22</b></p>
-        <p class="card-text">
- <span class="badge rounded-pill bg-success">First Layer of Cheese added</span>
-        </p>
-    </div>
-    <div class="card-footer">
-        18-08-2022 10:25 PM
-    </div>
-</div>
-</div> */}
+// {/* <div class="col-md-3 order-status-card">
+// <div class="card text-center">
+//     <div class="card-header">
+//         Order ID: <b>MP20220001</b>
+//     </div>
+//     <div class="card-body">
+//         <p class="card-text">Medium Size Pizza - 2 Nos</p>
+//         <p class="card-text">Bill Amount: <b>$22</b></p>
+//         <p class="card-text">
+//  <span class="badge rounded-pill bg-success">First Layer of Cheese added</span>
+//         </p>
+//     </div>
+//     <div class="card-footer">
+//         18-08-2022 10:25 PM
+//     </div>
+// </div>
+// </div> */}

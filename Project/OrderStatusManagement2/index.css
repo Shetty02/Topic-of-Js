@@ -1,5 +1,10 @@
+body {
+	background-image: url(https://images01.nicepage.com/page/50/53/website-template-preview-50537.jpg);
+	background-size: cover;
+}
 .main-title {
 	text-align: center;
+	color: black;
 }
 
 .order-id-input-wrapper {
@@ -10,7 +15,9 @@
 .order-status-card {
 	margin: 20px 0;
 }
-
+.order-status-card .card{
+	border-radius: 20px ;
+}
 .order-status-card .card-header{
 	background: #006491;
   color: white;

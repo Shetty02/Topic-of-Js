@@ -98,10 +98,7 @@ function validate() {
         document.getElementById('city-vaild').style.display = 'none'
         document.getElementById('zip-vaild').style.display = 'none'
         document.getElementById('state-valid').style.display='none';
-        document.getElementById("tnC-invalid").style.display='none';
-
-
-         
+        document.getElementById("tnC-invalid").style.display='none';         
     }
 // console.log(firstNameInput, lastNameInput, EmailInput, cityInput, StateInput, zipInput, tnCInput);
 }
