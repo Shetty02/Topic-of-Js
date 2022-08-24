@@ -40,6 +40,7 @@ const createOrderCard = (orderId) => {
          month: 'long', 
          day: 'numeric',
         hour:'2-digit',
+        // hour:"numeric",
       minute:"2-digit",
     second:'2-digit' })
     // 22-08-2022 02:32 PM
