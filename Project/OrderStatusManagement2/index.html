@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/6302dc4747.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
@@ -17,14 +18,48 @@
         <button class="btn btn-danger" type="button" id="button-addon2" onclick="exectueOrder()">Execute</button>
       </div>
       <div class="row" id="order-cards-wrapper">
-        <!-- <div class="col-md-3 order-status-card">
+        <div class="col-md-3 order-status-card">
           <div class="card text-center">
             <div class="card-header">
-              Order ID: <b></b>
+              <span>Order ID: <b>nh03</b></span>
+              <i class="fa-solid fa-xmark "></i>
             </div>
             <div class="card-body">
-              <p class="card-text">Medium Size Pizza - 2 Nos</p>
-              <p class="card-text">Bill Amount: <b>$22</b></p>
+              <p class="card-text">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Item</th>
+                      <th scope="col">Price</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Medium Corn</td>
+                      <td>$5.00</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>Large Mushroom</td>
+                      <td>$7.50</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <!-- <td colspan="2">Larry the Bird</td> -->
+                      <td>Medium Paneer</td>
+                      <td>$4.75</td>
+                    </tr> 
+                    <tr>
+                      <td colspan="2">Total</td>
+                      <td>$17.25</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </p>
+              <!-- <p class="card-text">Medium Size Pizza - 2 Nos</p>
+              <p class="card-text">Bill Amount: <b>$22</b></p> -->
               <p class="card-text" > <span class="badge rounded-pill bg-success">First Layer of Cheese added</span>
               </p>
             </div>
@@ -32,7 +67,7 @@
               18-08-2022 10:25 PM
             </div>
           </div>
-        </div> -->
+        </div>
       </div>
     </div>
            

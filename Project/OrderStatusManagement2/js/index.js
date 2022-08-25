@@ -6,6 +6,7 @@ const exectueOrder = () =>{
     // console.log(orderId) //Checking the orderId Exectution is correct or not 
 
     createOrderCard(orderId)
+    
 
     document.getElementById(orderId).innerText = 'Order Placed'
     
@@ -19,9 +20,6 @@ ChefReceived(orderId)
 .then(PackageReceivedAtCounter)
 .then(()=>
 document.getElementById(orderId).innerText = 'The order is ready!')
-.catch((err)=>console.log(err))
-
-
-    
+.catch((err)=>console.log(err))    
 }
 
